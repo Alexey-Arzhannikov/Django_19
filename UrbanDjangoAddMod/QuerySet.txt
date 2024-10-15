@@ -1,0 +1,19 @@
+python manage.py shell
+
+from task1.models import Buyer
+from task1.models import Game
+
+Buyer.objects.create(name='Alex', balance=1000, age=25)
+Buyer.objects.create(name='Vika', balance=100, age=21)
+Buyer.objects.create(name='Makar', balance=10, age=12)
+
+Game.objects.create(title='God of War: Ragnarok', cost=40.87, size=83.9, description='Game of the year', age_limited=1)
+Game.objects.create(title='ASTROSs PLAYROOM', cost=80.4, size=11.64, description='platform game', age_limited=0)
+Game.objects.create(title='UFC 3, cost=37.37, size=19.06, description='sport, martial arts', age_limited=1)
+
+fst_b, sec_b = Buyer.objects.filter(age__gt=18)
+thrd_b = Buyer.objects.get(age__lt=18)
+
+Game.objects.get(id=1).buyer.set((fst_b, sec_b))
+Game.objects.get(id=3).buyer.set((fst_b, sec_b))
+Game.objects.get(id=2).buyer.set((fst_b, thrd_b))
