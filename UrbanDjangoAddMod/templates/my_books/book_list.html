@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+</head>
+<body>
+<div class="post-container">
+{% for book in books %}
+<h2>{{ book.title }}</h2>
+<h3>{{ book.description | truncatewords:50}}</h3>
+{% endfor %}
+</div>
+{% if books.has_previous or books.has_next %}
+<ul class="pagination">
+    {% if books.has_previous %}
+    <li><a href="?page={{ books.previous_page_number }}">«</a></li>
+    {% else %}
+    <li class="disabled"><span>«</span></li>
+    {% endif %}
+
+    {% for i in books.paginator.page_range %}
+    {% if books.number == i %}
+    <li class="active"><span>{{ i }}<span class="sr-only"> (Текущая)</span></span></li>
+    {% else %}
+    <li><a href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if books.has_next %}
+    <li><a href="?page={{ books.next_page_number }}">»</a></li>
+    {% else %}
+    <li class="disabled"><span>»</span></li>
+    {% endif %}
+</ul>
+{% endif %}
+</body>
+<form action="http://127.0.0.1:8000/view/" target="_self">
+    <button class="btn">Book list 2</button>
+</form>
+</html>

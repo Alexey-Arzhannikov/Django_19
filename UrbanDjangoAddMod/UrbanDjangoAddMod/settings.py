@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task1'
+    'task1',
+    'mybooks'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR /
-                 'templates/second_task'],
+                 'templates/second_task',
+                 'templates/my_books'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

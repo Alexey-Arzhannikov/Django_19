@@ -1,10 +1,80 @@
+.btn {
+    width: 10em;
+    height: 3em;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.btn_p {
+    width: 5em;
+    height: 1.5em;
+    margin-top: 5px;
+}
 body {
-    background-color: #FFFFE0;
+    background-color: #d8d6e5;
+}
+.paginator_bt {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
 }
 
-h1 {
-    text-align: left;
+.post-container {
+    width: 800px;
+    padding-left: 50px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: normal;
 }
-h3 {
-    text-align: left;
+
+/* Общий стиль */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    max-width: 60%;
+}
+
+.pagination li {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.pagination li a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pagination li.active,
+.pagination li:hover {
+    background-color: #eee;
+}
+
+.pagination li.disabled span {
+    color: #999;
+}
+
+/* Форма для выбора количества элементов */
+#custom-pagination form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#custom-pagination label {
+    font-size: 1rem;
+    margin-right: 1em;
+}
+
+#custom-pagination select {
+    height: 30px;
+    min-width: 100px;
 }

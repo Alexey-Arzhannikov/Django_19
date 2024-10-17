@@ -18,12 +18,19 @@ from django.contrib import admin
 from django.urls import path
 from task1.views import platform, games, cart, sign_up_by_html, sign_up_by_django
 
+from mybooks.views import books_list, books_list_view
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('platform/', platform),
+#     path('platform/games/', games),
+#     path('platform/cart/', cart),
+#     path('html_sign_up/', sign_up_by_html),
+#     path('django_sign_up/', sign_up_by_django),
+# ]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('platform/', platform),
-    path('platform/games/', games),
-    path('platform/cart/', cart),
-    path('html_sign_up/', sign_up_by_html),
-    path('django_sign_up/', sign_up_by_django),
+    path('', books_list),
+    path('view/', books_list_view),
 ]
