@@ -1,10 +1,12 @@
 from django.contrib import admin
-from .models import Buyer, Game
+from .models import Buyer, Game, User
 
 
 # Register your models here.
 # admin.site.register(Buyer)
 # admin.site.register(Game)
+
+admin.site.register(User)
 
 @admin.register(Buyer)
 class BuyerAdmin(admin.ModelAdmin):
@@ -26,3 +28,5 @@ class GameAdmin(admin.ModelAdmin):
             'fields': ('description', ('size', 'age_limited'),)
         }),
     )
+
+
